@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="web-application">
+  <id>cz.vitexsoftware.vaultwarden-web-vault</id>
+  <metadata_license>MIT</metadata_license>
+  <project_license>GPL-3.0-or-later</project_license>
+  <name>Vaultwarden Web Vault</name>
+  <summary>Web Vault client interface for Vaultwarden</summary>
+  <description>
+    <p>
+      Vaultwarden is an unofficial Bitwarden-compatible server written in Rust.
+      This package provides the web vault client interface — the browser-based
+      frontend for managing passwords, identities, and secure notes hosted on
+      a self-hosted Vaultwarden server.
+    </p>
+    <p>
+      The web vault is built from the official Bitwarden web client source
+      with patches applied to make it compatible with Vaultwarden's API.
+      Vaultwarden is not associated with Bitwarden Inc. or the Bitwarden project.
+    </p>
+  </description>
+  <url type="homepage">https://github.com/dani-garcia/vaultwarden</url>
+  <url type="bugtracker">https://github.com/dani-garcia/vaultwarden/issues</url>
+  <launchable type="url">http://localhost:8000/</launchable>
+  <developer id="github.com/dani-garcia">
+    <name>Vaultwarden Contributors</name>
+  </developer>
+  <icon type="stock">preferences-web-browser</icon>
+  <categories>
+    <category>Security</category>
+    <category>Network</category>
+  </categories>
+  <provides>
+    <mediatype>text/html</mediatype>
+  </provides>
+  <releases>
+    <release version="2026.4.1" date="2026-04-01"/>
+  </releases>
+  <content_rating type="oars-1.1"/>
+</component>

@@ -1,0 +1,30 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: vaultwarden-web-vault
+Upstream-Contact: https://github.com/dani-garcia/vaultwarden
+Source: https://github.com/vaultwarden/vw_web_builds
+
+Files: *
+Copyright: 2015-2026 Bitwarden Inc.
+           2020-2026 Vaultwarden maintainers
+License: GPL-3+
+ This package is based on the Bitwarden web client, which is licensed under
+ the GNU General Public License version 3 or later (GPL-3+).
+ .
+ The Vaultwarden project only uses the GPLv3 licensed code from the Bitwarden
+ repository for building the web-vault. Note that the upstream Bitwarden
+ repository may contain non-free code in its history, but the Vaultwarden project
+ carefully selects and uses only the GPLv3-licensed portions.
+ .
+ On Debian systems, the complete text of the GNU General Public License
+ version 3 can be found in "/usr/share/common-licenses/GPL-3".
+
+Files: LICENSE.txt
+Copyright: 2007 Free Software Foundation, Inc.
+License: GPL-3+
+ This is the GNU General Public License version 3.
+
+Files: debian/*
+Copyright: 2026 Vítězslav Dvořák <info@vitexsoftware.cz>
+License: GPL-3+
+ The Debian packaging is licensed under the GNU General Public License
+ version 3 or later.

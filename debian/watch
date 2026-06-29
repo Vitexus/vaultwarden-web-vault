@@ -1,0 +1,4 @@
+version=4
+opts=filenamemangle=s/.+\/v?(\d\S+)\.tar\.gz/vaultwarden-web-vault-$1\.tar\.gz/ \
+  https://github.com/vaultwarden/vw_web_builds/releases \
+  .*/v?(\d\S+)\.tar\.gz
