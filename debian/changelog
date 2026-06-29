@@ -1,0 +1,5 @@
+vaultwarden-web-vault (2026.4.1) UNRELEASED; urgency=medium
+
+  * Initial Debian packaging of Vaultwarden web vault based on v2026.4.1.
+
+ -- Vítězslav Dvořák <info@vitexsoftware.cz>  Sun, 28 Jun 2026 19:02:46 +0200

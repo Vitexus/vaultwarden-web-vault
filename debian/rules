@@ -1,0 +1,29 @@
+#!/usr/bin/make -f
+export DH_VERBOSE = 1
+
+# Set version to avoid interactive prompts
+VAULT_VERSION ?= v2026.4.1
+CHECKOUT_TAGS ?= false
+export VAULT_VERSION
+export CHECKOUT_TAGS
+
+%:
+	dh $@
+
+override_dh_auto_configure:
+	# No configuration needed for this package
+
+override_dh_auto_build:
+	VAULT_VERSION="${VAULT_VERSION}" CHECKOUT_TAGS="${CHECKOUT_TAGS}" make checkout
+	# Stub missing Rust-generated workspace so npm ci can resolve the monorepo
+	mkdir -p web-vault/apps/desktop/desktop_native/napi
+	echo '{"name":"@bitwarden/desktop-napi","version":"0.0.1","private":true}' \
+	    > web-vault/apps/desktop/desktop_native/napi/package.json
+	VAULT_VERSION="${VAULT_VERSION}" CHECKOUT_TAGS="${CHECKOUT_TAGS}" make build tar
+
+override_dh_auto_install:
+	mkdir -p debian/vaultwarden-web-vault/usr/share/vaultwarden-web-vault
+	cp -r builds/bw_web_v*/* debian/vaultwarden-web-vault/usr/share/vaultwarden-web-vault/
+
+override_dh_auto_test:
+	appstreamcli validate --pedantic --no-net debian/vaultwarden-web-vault.metainfo.xml

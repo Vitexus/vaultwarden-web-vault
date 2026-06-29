@@ -1,0 +1,29 @@
+Source: vaultwarden-web-vault
+Section: web
+Priority: optional
+Maintainer: Vítězslav Dvořák <info@vitexsoftware.cz>
+Build-Depends:
+ debhelper-compat (= 13),
+ appstream,
+ git,
+ nodejs,
+ npm,
+Standards-Version: 4.7.0
+Homepage: https://github.com/dani-garcia/vaultwarden
+Vcs-Git: https://github.com/vaultwarden/vw_web_builds.git
+Vcs-Browser: https://github.com/vaultwarden/vw_web_builds
+Rules-Requires-Root: no
+
+Package: vaultwarden-web-vault
+Architecture: all
+Depends:
+ ${misc:Depends},
+Description: Web Vault for Vaultwarden
+ Vaultwarden is an unofficial Bitwarden-compatible server written in Rust.
+ This package provides the web vault client interface for Vaultwarden,
+ a community-driven password manager.
+ .
+ This web vault is built from the official Bitwarden web client source
+ with patches applied to make it compatible with Vaultwarden's API.
+ .
+ Note: Vaultwarden is not associated with Bitwarden Inc. or the Bitwarden project.
