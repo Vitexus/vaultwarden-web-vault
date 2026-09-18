@@ -1,15 +1,23 @@
 #!groovy
 
-String[] distributions = ['debian:trixie']
+String[] distributions = ['debian:trixie',
+            'debian:forky',]
 
 String vendor = 'vitexsoftware'
 
 properties([
-    copyArtifactPermission('Foregin/*')
+    copyArtifactPermission('Foregin/*'),
+    buildBlocker(
+        useBuildBlocker: true,
+        blockLevel: 'GLOBAL',
+        scanQueueFor: 'ALL',
+        blockingJobs: 'RebulidDEBRepoByAnsible'
+    )
 ])
 node() {
     ansiColor('xterm') {
         stage('SCM Checkout') {
+            sh 'sudo chown -R jenkins:jenkins . 2>/dev/null || true'
             checkout scm
         }
     }
@@ -31,6 +39,7 @@ distributions.each { distro ->
         node {
             ansiColor('xterm') {
                 stage('Checkout ' + distroName) {
+                    sh 'sudo chown -R jenkins:jenkins . 2>/dev/null || true'
                     checkout scm
                     def imageName = vendor + '/' + distro
                     buildImage = docker.image(imageName)
