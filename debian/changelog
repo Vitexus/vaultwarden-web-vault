@@ -1,3 +1,10 @@
+vaultwarden-web-vault (2026.8.0-1) unstable; urgency=medium
+
+  * New upstream version 2026.8.0 (required by vaultwarden 1.37+)
+
+
+ -- Vítězslav Dvořák <info@vitexsoftware.cz>  Wed, 14 Oct 2026 17:41:51 +0200
+
 vaultwarden-web-vault (2026.4.1) UNRELEASED; urgency=medium
 
   * Initial Debian packaging of Vaultwarden web vault based on v2026.4.1.
